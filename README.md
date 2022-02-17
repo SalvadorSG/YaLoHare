@@ -19,7 +19,7 @@
 
 ## Añadir una cita ##
 
-Este apartado será el primero que se mostrará si no tienes ningún evento ya registrado. Habrá un calendario básico en el cual buscaremos el día en el que ocurre el evento que queramos guardar.
+Tras loguearnos de forma correcta y crear nuestra cuenta, este apartado será el primero que se mostrará si no tienes ningún evento ya registrado. Habrá un calendario básico en el cual buscaremos el día en el que ocurre el evento que queramos guardar.
 
 ---
 
