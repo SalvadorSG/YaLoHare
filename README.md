@@ -1,5 +1,7 @@
 # Ya Lo Haré
 
+![Logo YLH](https://user-images.githubusercontent.com/92319190/154747519-a407cccd-7a26-42ae-98ad-7d4af44c1a24.png)
+
 
 **_Ya lo haré_** es una aplicación web en la que podrás organizar de manera muy intuitiva y útil los eventos venideros que quieras recordar, además de poder saber cúando fue la última vez que pasó un suceso registrado.
 
