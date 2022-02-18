@@ -25,25 +25,25 @@ Tras loguearnos de forma correcta y crear nuestra cuenta, este apartado será el
 
 ## Clasificarla en un campo concreto ##
 
-Tras clickar en el día que queramos seleccionar, se nos mostrará un formulario para que editemos el evento. Le podremos poner nombre, hora y clasificarlo en un grupo, para que luego tengamos las citas agrupadas por tipo. Los tags podrán ser creados por el usuario, dándole el nombre y color que quieran, aunque también podrá elegir alguna categoría predefinida, como trabajo, médico, social, etc.
+Tras clickar en el día que queramos seleccionar, se nos mostrará un formulario para crear la tarjeta del evento. Le podremos poner nombre, hora y clasificarlo en un grupo, para que luego tengamos las citas reunidas por tipo. Los tags podrán ser creados por el usuario, dándole el nombre y color que quieran, aunque también podremos elegir alguna categoría predefinida, como trabajo, médico, social, etc.
 
 ---
 
 ## Configurar si quieres recordatorio o no ##
 
-Si la cita es importante, tendremos la opción de que te llegue un correo electrónico el día de antes del evento para recordarlo.
+Si la cita es importante, tendremos la opción de que te llegue un correo electrónico el día de antes del evento para recordártelo.
 
 ---
 
 ## Ver el tiempo que queda para que llegue el evento ##
 
-Una vez hayamos añadido algún evento, se nos redirigirá a la pantalla principal, donde estarán las tarjetas con la cuenta atrás hasta el momento del evento. Las tarjetas se mostrarán en orden cronológico, siendo las primeras las que más cerca estén de que ocurran. Nos informarán de los días, horas y minutos que faltan hasta dicha cita. También encontraremos los apartados antes creados por si queremos filtrarlas y mostrar solo las de un campo en concreto, por ejemplo, las médicas. 
+Una vez hayamos añadido algún suceso, se nos redirigirá a la pantalla principal, donde estarán las tarjetas con la cuenta atrás hasta el momento del evento. Las tarjetas se mostrarán en orden cronológico, siendo las primeras las que más cerca estén de que ocurran. Nos informarán de los días, horas y minutos que faltan hasta dicha cita. También encontraremos los apartados antes creados por si queremos filtrarlas y mostrar solo las de un campo en concreto, por ejemplo, las médicas. 
 
 ---
 
 ## Poder editarlo en caso de que sufra algún cambio ##
 
-Accediendo a cada cita podremos borrarla o editarla en caso de que sufra algún cambio. Si editamos la fecha, este evento se recolocará en su nuevo sitio teniendo en cuenta cuánto le falta para suceder.
+Accediendo a cada cita podremos borrarla o editarla en caso de que sufra algún cambio. Si editamos la fecha, este evento se recolocará en su nuevo sitio teniendo en cuenta cuánto le falta para que ocurra.
 
 ---
 
