@@ -1,16 +1,12 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-type tipoCategoria = {
+export interface iEventoFuturo extends Document {
+  idUsuario: 
   nombre: String;
-  color: String;
-};
-
-export interface iEventoPasado extends Document {
-  idEvenPasado: any;
-  nombre: String;
-  fecha: String;
-  hora: String;
+  date: Date;
   categoria: tipoCategoria;
+  recordatorio: Boolean;
+
 }
 
 const schema = new Schema({
@@ -18,9 +14,10 @@ const schema = new Schema({
   fecha: { type: String, require: true },
   hora: { type: String, require: true },
   categoria: { type: String, require: true },
+  recordatorio: { type: Boolean, require: false },
 });
 
-export const EventoPasado = mongoose.model<iEventoPasado>(
-  'EventoPasado',
+export const EventoFuturo = mongoose.model<iEventoFuturo>(
+  'EventoFuturo',
   schema,
 );
