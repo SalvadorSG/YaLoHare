@@ -1,18 +1,18 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable camelcase */
 import { FastifyPluginAsync } from 'fastify';
 import fastifyCors from 'fastify-cors';
 import { connectDB } from './lib/db';
 import { evento_router } from './routers/evento_router';
 import { main_router } from './routers/main_router';
+import fastifyBlipp from 'fastify-blipp';
 
 export const main_app: FastifyPluginAsync = async (app) => {
-  connectDB();
+  connectDB(app);
 
   // ALL URL
   // app.register(fastifyCors, {
   //   // put your options here
   // });
+  await app.register(fastifyBlipp);
 
   app.register(fastifyCors, {
     origin: (origin, cb) => {
@@ -26,6 +26,8 @@ export const main_app: FastifyPluginAsync = async (app) => {
     },
   });
 
-  app.register(main_router);
-  app.register(evento_router, { prefix: '/ingredients' });
+  await app.register(main_router);
+  await app.register(evento_router, { prefix: '/ingredients' });
+  
+  app.blipp()
 };

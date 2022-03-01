@@ -52,3 +52,11 @@ Accediendo a cada cita podremos borrarla o editarla en caso de que sufra algún 
 ## ¿Cuándo fue la última vez que sucedió? ##
 
 También tendremos la opción de ver cuánto tiempo ha pasado desde que ocurrió el evento en concreto, viendo cuándo fue la última vez que quedamos con X persona o el último informe de contabilidad que hicimos.
+
+
+## TODOs
+
+- [ ] Modelos
+- [ ] CRUD Evento
+- [ ] Archivo seed
+- [ ] Verificar endpoints (postman)

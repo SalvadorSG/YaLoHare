@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import mongoose, { Document, Schema } from 'mongoose';
 import { iCategoria } from './categoria.model';
 
