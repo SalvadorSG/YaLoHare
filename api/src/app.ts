@@ -27,7 +27,7 @@ export const main_app: FastifyPluginAsync = async (app) => {
   });
 
   await app.register(main_router);
-  await app.register(evento_router, { prefix: '/ingredients' });
-  
-  app.blipp()
+  await app.register(evento_router, { prefix: '/evento' });
+
+  app.blipp();
 };

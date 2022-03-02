@@ -53,6 +53,11 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
+"@types/luxon@^2.0.9":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-2.0.9.tgz#782a0edfa6d699191292c13168bd496cd66b87c6"
+  integrity sha512-ZuzIc7aN+i2ZDMWIiSmMdubR9EMMSTdEzF6R+FckP4p6xdnOYKqknTo/k+xXQvciSXlNGIwA4OPU5X7JIFzYdA==
+
 "@types/node@*":
   version "17.0.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
@@ -847,6 +852,11 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+luxon@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-2.3.1.tgz#f276b1b53fd9a740a60e666a541a7f6dbed4155a"
+  integrity sha512-I8vnjOmhXsMSlNMZlMkSOvgrxKJl0uOsEzdGgGNZuZPaS9KlefpE9KV95QFftlJSC+1UyCC9/I69R02cz/zcCA==
 
 make-dir@^3.0.0:
   version "3.1.0"

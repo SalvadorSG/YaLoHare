@@ -56,7 +56,7 @@ También tendremos la opción de ver cuánto tiempo ha pasado desde que ocurrió
 
 ## TODOs
 
-- [ ] Modelos
-- [ ] CRUD Evento
-- [ ] Archivo seed
+- [x] Modelos
+- [x] CRUD Evento
+- [x] Archivo seed
 - [ ] Verificar endpoints (postman)

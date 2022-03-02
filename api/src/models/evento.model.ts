@@ -12,7 +12,7 @@ export interface iEvento extends Document {
 
 const schema = new Schema(
   {
-    idUsuario: { type: String, require: true },
+    idUsuario: { type: String, require: false },
     idGrupo: { type: String, require: false },
     nombre: { type: String, require: true },
     date: { type: Date, require: true },
