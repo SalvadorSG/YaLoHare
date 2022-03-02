@@ -1,7 +1,12 @@
+import Navbar from "../components/Navbar";
+
 const IndexPage = () => {
+
+
   return (
     <div>
-      <p>Hola!</p>
+      <Navbar />
+      <p>¡Bienvenido a Ya Lo Haré!</p>
     </div>
   );
 };
