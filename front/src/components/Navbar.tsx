@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <ul>
       <li>
@@ -20,5 +20,3 @@ const Navbar = () => {
     </ul>
   );
 };
-
-export default Navbar;

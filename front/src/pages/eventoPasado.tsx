@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import {Navbar} from '../components/Navbar';
 
 const eventoPasado = () => (
   <div>
     <Navbar />
-    <h1>Tus eventos pasados</h1>
+    <h2>Tus eventos pasados</h2>
     <p>Aquí estarán las tarjetas de los eventos pasados</p>
   </div>
 );

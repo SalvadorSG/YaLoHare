@@ -1,7 +1,7 @@
 export const Layout = ({ children }) => {
   return (
     <div>
-      <h2> Ya lo haré</h2>
+      <h1> Ya lo haré</h1>
       <div>{children}</div>
     </div>
   );

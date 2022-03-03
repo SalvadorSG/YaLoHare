@@ -38,14 +38,14 @@ const crearEvento = async () => {
 
   console.log(`✅ Evento creado`);
 
-  //   const eventoDos = Evento.create({
-  //     nombre: 'Informe para Uruguay',
-  //     fecha: DateTime.fromISO('2022-10-22T09:08:34.123'),
-  //     categoria: catTrabajo._id,
-  //     recordatorio: false,
-  //   });
+    const eventoDos = await Evento.create({
+      nombre: 'Informe para Uruguay',
+      fecha: DateTime.fromISO('2022-10-22T09:08:34.123'),
+      categoria: catTrabajo._id,
+      recordatorio: false,
+    });
 
-  //   console.log(`✅ Evento creado`);
+    console.log(`✅ Evento creado`);
 
   //   const eventoTres = Evento.create({
   //     nombre: 'Reunión de ex-alumnos',
