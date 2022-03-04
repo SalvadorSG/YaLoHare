@@ -11,6 +11,7 @@ export const getEventos = async () => {
 };
 
 export const addEvento = async (data) => {
+  console.log(`📝, la data del evento añadido es ${data}`);
   const res = await api.post('/evento', data);
   return res.data;
 };
