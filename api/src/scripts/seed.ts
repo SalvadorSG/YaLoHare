@@ -46,24 +46,6 @@ const crearEvento = async () => {
     });
 
     console.log(`✅ Evento creado`);
-
-  //   const eventoTres = Evento.create({
-  //     nombre: 'Reunión de ex-alumnos',
-
-  //     fecha: DateTime.fromISO('2022-10-20T09:08:34.123'),
-  //     categoria: catPersonal._id,
-  //     recordatorio: false,
-  //   });
-
-  //   console.log(`✅ Evento creado`);
-
-  //   const eventoCuatro = Evento.create({
-  //     nombre: 'Terminator 15',
-  //     fecha: DateTime.fromISO('2022-10-11T09:08:34.123'),
-  //     categoria: catEntreten._id,
-  //     recordatorio: true,
-  //   });
-  // console.log(`✅ Evento creado`);
 };
 
 (async () => {
