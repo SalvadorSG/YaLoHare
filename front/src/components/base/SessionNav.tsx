@@ -9,24 +9,24 @@ const Nav = styled.section`
   width: 30px;
   padding: 8px 24px;
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `
 
 const BtnLink = styled.button`
-  color: #00bd56;
+  color: blue;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #00bd56;
+  border: 1px solid blue;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 8px 20px;
   &:hover {
-    background-color: #eafaf3;
+    background-color: lightblue;
   }
 `
 
 const Name = styled.span`
-  color: #00bd56;
+  color: black;
   font-weight: 700;
   font-size: 16px;
 `
@@ -59,30 +59,3 @@ function SessionNav() {
 }
 
 export default SessionNav;
-
-  
-
-// export const SessionNav = () => {
-//   const { user, error, isLoading } = useUser();
-
-//   if (isLoading) return <div>Loading...</div>;
-//   if (error) return <div>{error.message}</div>;
-//   console.log(user);
-//   return (
-//     <div tw="flex flex-row gap-3">
-//       {user ? (
-//         <Link href="/api/auth/logout">
-//           <a>
-//             <ButtonNav>Logout {user.email}</ButtonNav>
-//           </a>
-//         </Link>
-//       ) : (
-//         <Link href="/api/auth/login">
-//           <a>
-//             <ButtonNav variant="light">Login</ButtonNav>
-//           </a>
-//         </Link>
-//       )}
-//     </div>
-//   );
-// };
