@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import SessionNav from './SessionNav';
 
 export const Navbar = () => {
   return (
@@ -16,7 +17,7 @@ export const Navbar = () => {
       <li>
         <Link href="/eventoPasado">Eventos pasados</Link>
       </li>
-
+      <SessionNav />
     </ul>
   );
 };
