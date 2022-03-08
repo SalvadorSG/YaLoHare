@@ -5,7 +5,7 @@ import { evento_router } from './routers/evento_router';
 import { main_router } from './routers/main_router';
 import fastifyBlipp from 'fastify-blipp';
 import fastifyAuth0 from 'fastify-auth0-verify';
-import {AUTH0} from './config'
+import { AUTH0 } from './config';
 
 export const main_app: FastifyPluginAsync = async (app) => {
   connectDB(app);

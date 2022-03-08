@@ -1,16 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { addEvento } from "../../lib/api";
+import React from 'react';
+import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { addEvento } from '../../lib/api';
 
-const errorColor = "#ff4d4f";
+const hours = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+  22, 23,
+];
+const minutes = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+
+const errorColor = '#ff4d4f';
 
 const FlexForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  `
+`;
 
 const Row = styled.div`
   display: flex;
@@ -20,8 +26,6 @@ const Row = styled.div`
 const Column = styled.div`
   display: flex;
   margin: 10px;
-
-
 `;
 
 const CustomInput = styled.input`
@@ -34,18 +38,18 @@ const CustomInput = styled.input`
 `;
 
 const CustomBtn = styled.button`
-background-color: #555555;
-border: 2px solid #4CAF50;
-color: white;
-padding: 15px 32px;
-text-align: center;
-cursor: pointer;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-transition-duration: 0.6s;
-&:hover {
-    background-color: #4CAF50; /* Green */
+  background-color: #555555;
+  border: 2px solid #4caf50;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.6s;
+  &:hover {
+    background-color: #4caf50; /* Green */
     color: white;
   }
   &::active {
@@ -54,7 +58,6 @@ transition-duration: 0.6s;
     transform: translateY(4px);
   }
 `;
-
 
 const ErrorMessageText = styled.p`
   font-size: 12px;
@@ -70,8 +73,11 @@ const NuevoEvento = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = handleSubmit(async (data) => {
+    data.fecha = new Date(data.fecha);
+    data.fecha.setHours(data.hora);
+    data.fecha.setMinutes(data.minutos);
     console.log(data);
-   const evento = await addEvento(data);
+    const evento = await addEvento(data);
     reset();
   });
   console.log(errors);
@@ -84,19 +90,37 @@ const NuevoEvento = () => {
             <CustomInput
               type="text"
               placeholder="Nombre"
-              {...register("nombre", { required: true, maxLength: 80 })}
+              {...register('nombre', { required: true, maxLength: 80 })}
             />
 
-<CustomInput
+            <CustomInput
+              name="fecha"
               type="date"
               placeholder="Fecha"
-              {...register("fecha", {
-                valueAsDate: true, required: true
+              {...register('fecha', {
+                valueAsDate: true,
+                required: true,
               })}
             />
           </Column>
+
           <Column>
-            <select {...register("categoria", { required: true })}>
+            <select {...register('hora', { required: true })}>
+              {hours.map((hour) => {
+                return <option value={hour}>{hour}</option>;
+              })}
+            </select>
+          </Column>
+          <Column>
+            <select {...register('minutos', { required: true })}>
+              {minutes.map((minute) => {
+                return <option value={minute}>{minute}</option>;
+              })}
+            </select>
+          </Column>
+
+          <Column>
+            <select {...register('categoria', { required: true })}>
               <option value="Trabajo">Trabajo</option>
               <option value="Médico">Médico</option>
               <option value="Personal">Personal</option>
@@ -105,17 +129,17 @@ const NuevoEvento = () => {
           </Column>
 
           <Column>
-            <select {...register("recordatorio", { required: true })}>
+            <select {...register('recordatorio', { required: true })}>
               <option value="Si">Sí, deseo recordatiorio</option>
               <option value="No">No, no recordar este evento</option>
-
             </select>
           </Column>
-       
-          </Row>
+        </Row>
         <Row>
           <Column>
-            <CustomBtn onClick={onSubmit} type="submit" >Añadir</CustomBtn>
+            <CustomBtn onClick={onSubmit} type="submit">
+              Añadir
+            </CustomBtn>
           </Column>
         </Row>
       </FlexForm>

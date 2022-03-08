@@ -12,7 +12,7 @@ const schema = new Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 export const Grupo = mongoose.model<iGrupo>('Grupo', schema);

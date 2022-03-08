@@ -1,6 +1,4 @@
-import axios from "axios";
-
-
+import axios from 'axios';
 
 const apiBaseURL = 'http://localhost:3001';
 

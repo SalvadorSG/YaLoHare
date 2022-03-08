@@ -1,8 +1,8 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 export interface iUsuario extends Document {
-idAuth: String;
-idGrupo: String;
+  idAuth: String;
+  idGrupo: String;
 }
 
 const schema = new Schema({

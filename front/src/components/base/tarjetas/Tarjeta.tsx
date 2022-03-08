@@ -1,37 +1,91 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { deleteEvento } from '../../../lib/api';
 
 interface TarjetaProps {
-    nombre: String;
-    fecha: Date;
-    recordatorio: Boolean;
-  }
+  nombre: String;
+  fecha: Date;
+  recordatorio: Boolean;
+}
 
-  const Columnas = styled.div`
+const Columnas = styled.div`
   display: flex;
   float: left;
   margin: 30px;
-  `
-  const TipoTarjeta = styled.div`
-  border: 1px solid green;
+`;
+const TipoTarjeta = styled.div`
+  border: 1px solid lightblue;
   padding: 20px;
   column-count: 1;
+  line-height : 15px;
   width: 100px;
   height: 200px;
-  `;
+  background-color: lightgray;
+`;
+
+const Elemento = styled.div`
+margin: 15px;
+`
+
+const CustomBtn = styled.button`
+  background-color: white;
+  border: 2px solid #4caf50;
+  color: black;
+  padding: 1px 3px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.6s;
+  &:hover {
+    background-color: #4caf50; /* Green */
+    color: white;
+  }
+  &::active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+`;
+
+export const Tarjeta = ({ nombre, fecha, _id, categoria }) => {
+  const [fechaFormateada, setFechaFormateada] = useState('');
+  const [horaFormateada, setHoraFormateada] = useState('');
+
+  useEffect(() => {
+    console.log('fecha formateada', fechaFormateada);
+    const date = new Date(fecha)
+    setFechaFormateada(date.toLocaleDateString('es-ES'));
+    setHoraFormateada(`${date.getHours()}:${date.getMinutes()}`);
+  });
 
 
 
-export const Tarjeta = ({ nombre, fecha}) => {
+  const deleteEvent = (_id) => {
+    console.log('id de tarjeta', _id);
+    deleteEvento(_id);
+  };
   return (
-      <Columnas>
+    <Columnas>
       <TipoTarjeta>
-    <div>
-      <div>{nombre}</div>
-      <div>{fecha}</div>
-      <a href="#">Eliminar</a>
-    </div>
-    </TipoTarjeta>
+        <div>
+          <Elemento>
+          <div>{nombre}</div>
+          </Elemento>
+          <Elemento>
+          <div>{fechaFormateada}</div>
+          </Elemento>
+          <Elemento>
+          <div>{horaFormateada}</div>
+          </Elemento>
+          <Elemento>
+          <div>{categoria}</div>
+          </Elemento>
+          <CustomBtn onClick={() => deleteEvent(_id)} >Eliminar </CustomBtn>
+        </div>
+      </TipoTarjeta>
     </Columnas>
   );
 };

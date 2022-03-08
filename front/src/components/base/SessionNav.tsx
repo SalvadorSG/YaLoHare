@@ -1,8 +1,7 @@
 import React from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 const Nav = styled.section`
   height: 64px;
@@ -11,7 +10,7 @@ const Nav = styled.section`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const BtnLink = styled.button`
   color: blue;
@@ -23,20 +22,20 @@ const BtnLink = styled.button`
   &:hover {
     background-color: lightblue;
   }
-`
+`;
 
 const Name = styled.span`
   color: black;
   font-weight: 700;
   font-size: 16px;
-`
+`;
 
 function SessionNav() {
-  const { user, error, isLoading } = useUser()
+  const { user, error, isLoading } = useUser();
 
-  console.log(user)
-  console.log(error)
-  console.log(isLoading)
+  console.log(user);
+  console.log(error);
+  console.log(isLoading);
 
   return (
     <Nav>
@@ -55,7 +54,7 @@ function SessionNav() {
         )}
       </div>
     </Nav>
-  )
+  );
 }
 
 export default SessionNav;
