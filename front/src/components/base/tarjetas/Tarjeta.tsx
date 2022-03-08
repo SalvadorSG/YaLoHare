@@ -50,12 +50,11 @@ const CustomBtn = styled.button`
   }
 `;
 
-export const Tarjeta = ({ nombre, fecha, _id, categoria }) => {
+export const Tarjeta = ({ nombre, fecha, _id }) => {
   const [fechaFormateada, setFechaFormateada] = useState('');
   const [horaFormateada, setHoraFormateada] = useState('');
 
   useEffect(() => {
-    console.log('fecha formateada', fechaFormateada);
     const date = new Date(fecha)
     setFechaFormateada(date.toLocaleDateString('es-ES'));
     setHoraFormateada(`${date.getHours()}:${date.getMinutes()}`);
@@ -79,9 +78,6 @@ export const Tarjeta = ({ nombre, fecha, _id, categoria }) => {
           </Elemento>
           <Elemento>
           <div>{horaFormateada}</div>
-          </Elemento>
-          <Elemento>
-          <div>{categoria}</div>
           </Elemento>
           <CustomBtn onClick={() => deleteEvent(_id)} >Eliminar </CustomBtn>
         </div>

@@ -4,6 +4,7 @@ const apiBaseURL = 'http://localhost:3001';
 
 const api = axios.create({ baseURL: apiBaseURL });
 
+
 export const getEventos = async () => {
   const res = await api.get('/evento');
   return res.data;
