@@ -14,9 +14,9 @@ export const evento_router: FastifyPluginAsync = async (app) => {
   });
 
   app.post('/', async (request: Myrequest, reply: FastifyReply) => {
-    const { nombre, fecha, categoria } = request.body;
+    const { nombre, fecha } = request.body;
     const { id } = request.params;
-    const evento = new Evento({ nombre, fecha, categoria });
+    const evento = new Evento({ nombre, fecha });
     await evento.save();
     return evento;
   });
