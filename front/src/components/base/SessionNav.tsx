@@ -13,14 +13,16 @@ const Nav = styled.section`
 `;
 
 const BtnLink = styled.button`
-  color: blue;
+  color: green;
   cursor: pointer;
-  background: transparent;
-  border: 1px solid blue;
+  background: white;
+  border: 1px solid black;
+  height: 50px;
+  width: 100px;
   border-radius: 8px;
-  padding: 8px 20px;
+  padding: 8px px;
   &:hover {
-    background-color: lightblue;
+    background-color: lightgreen;
   }
 `;
 
@@ -28,6 +30,8 @@ const Name = styled.span`
   color: black;
   font-weight: 700;
   font-size: 16px;
+  margin-right: 50px;
+  align-items: 
 `;
 
 function SessionNav() {
@@ -40,7 +44,7 @@ function SessionNav() {
   return (
     <Nav>
       <div>
-        <Name>{user?.name}</Name>
+        <Name>Bienvenid@ {user?.name}</Name>
       </div>
       <div>
         {user ? (

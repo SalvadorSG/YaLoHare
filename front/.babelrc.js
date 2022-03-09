@@ -14,7 +14,7 @@ module.exports = {
         "@babel/preset-flow"
     ],
     plugins: [
-        "@babel/transform-runtime"
-    ]
+        "@babel/transform-runtime",
+    ] 
   }
 

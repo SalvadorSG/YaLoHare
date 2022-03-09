@@ -83,66 +83,73 @@ const NuevoEvento = () => {
   console.log(errors);
 
   return (
-    <div>
-      <FlexForm onSubmit={handleSubmit(onSubmit)}>
-        <Row>
-          <Column>
-            <CustomInput
-              type="text"
-              placeholder="Nombre"
-              {...register('nombre', { required: true, maxLength: 80 })}
-            />
+    <div className="md:mx-auto md:w-full max-w-xl">
+      <div className="bg-emerald-white py-8 px-6 shadow rounded-lg px-10">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <div>
+              <label>
+                <input
+                  placeholder="Evento"
+                  type="text"
+                  name="evento"
+                  className="border-red px-3 py-2 rounded-lg shadow-sm focus:outline-none 
+                  focus:border-emerald2 focus:ring-1"
+                  {...register('nombre', { required: true, maxLength: 80 })}
+                />
+              </label>
 
-            <CustomInput
-              name="fecha"
-              type="date"
-              placeholder="Fecha"
-              {...register('fecha', {
-                valueAsDate: true,
-                required: true,
-              })}
-            />
-          </Column>
+              <CustomInput
+                name="fecha"
+                type="date"
+                placeholder="Fecha"
+                {...register('fecha', {
+                  valueAsDate: true,
+                  required: true,
+                })}
+              />
+            </div>
 
-          <Column>
-            <select {...register('hora', { required: true })}>
-              {hours.map((hour) => {
-                return <option value={hour}>{hour}</option>;
-              })}
-            </select>
-          </Column>
-          <Column>
-            <select {...register('minutos', { required: true })}>
-              {minutes.map((minute) => {
-                return <option value={minute}>{minute}</option>;
-              })}
-            </select>
-          </Column>
+            <Column>
+              <select {...register('hora', { required: true })}>
+                {hours.map((hour) => {
+                  return <option value={hour}>{hour}</option>;
+                })}
+              </select>
+            </Column>
+            <Column>
+              <select {...register('minutos', { required: true })}>
+                {minutes.map((minute) => {
+                  return <option value={minute}>{minute}</option>;
+                })}
+              </select>
+            </Column>
 
-          <Column>
-            <select {...register('categoria', { required: true })}>
-              <option value="Trabajo">Trabajo</option>
-              <option value="Médico">Médico</option>
-              <option value="Personal">Personal</option>
-              <option value="Entretenimiento">Entretenimiento</option>
-            </select>
-          </Column>
+            <Column>
+              <select {...register('categoria', { required: true })}>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Médico">Médico</option>
+                <option value="Personal">Personal</option>
+                <option value="Entretenimiento">Entretenimiento</option>
+              </select>
+            </Column>
 
-          <Column>
-            <select {...register('recordatorio', { required: true })}>
-              <option value="Si">Sí, deseo recordatiorio</option>
-              <option value="No">No, no recordar este evento</option>
-            </select>
-          </Column>
-        </Row>
-        <Row>
-          <Column>
-            <CustomBtn onClick={onSubmit} type="submit">
-              Añadir
-            </CustomBtn>
-          </Column>
-        </Row>
-      </FlexForm>
+            <Column>
+              <select {...register('recordatorio', { required: true })}>
+                <option value="Si">Sí, deseo recordatiorio</option>
+                <option value="No">No, no recordar este evento</option>
+              </select>
+            </Column>
+          </div>
+          <Row>
+            <Column>
+              <CustomBtn onClick={onSubmit} type="submit">
+                Añadir
+              </CustomBtn>
+            </Column>
+          </Row>
+        </form>
+      </div>
     </div>
   );
 };
