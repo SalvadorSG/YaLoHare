@@ -14,13 +14,13 @@ const Columnas = styled.div`
   margin: 30px;
 `;
 const TipoTarjeta = styled.div`
-  border: 1px solid lightblue;
+  border: 1px solid green;
   padding: 20px;
   column-count: 1;
   line-height : 15px;
-  width: 100px;
-  height: 200px;
-  background-color: lightgray;
+  width: 150px;
+  height: 300px;
+  background-color: lightgreen;
 `;
 
 const Elemento = styled.div`
