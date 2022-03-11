@@ -16,7 +16,6 @@ const schema = new Schema(
     idGrupo: { type: String, require: false },
     nombre: { type: String, require: true },
     fecha: { type: Date, require: true },
-    // categoria: { type: Schema.Types.ObjectId, require: true, ref: 'categoria' },
     categoria: { type: String, require: true, ref: 'categoria' },
     recordatorio: { type: Boolean, require: false },
   },

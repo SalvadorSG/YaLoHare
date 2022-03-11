@@ -3,53 +3,85 @@
 ![Logo YLH](https://user-images.githubusercontent.com/92319190/154747519-a407cccd-7a26-42ae-98ad-7d4af44c1a24.png)
 
 
+### Descripición ###
+
 **_Ya lo haré_** es una aplicación web en la que podrás organizar de manera muy intuitiva y útil los eventos venideros que quieras recordar, además de poder saber cúando fue la última vez que pasó un suceso registrado.
 
 ---
+### Motivación ###
 
-### Apartados de la web ###
+Siempre he sido una persona que, para poder organizarme y no olvidarme de nada, he tirado mucho de los típicos _Post-it_ pegados en la pared. Sin embargo, he decidido intentar trasladar este espíritu al terreno tecnológico.
+
+---
+ 
+ En mis investigaciones sobre el tema me he topado con ciertas aplicaciones que me han ayudado a enfocar mejor mis ideas. Estas apps son [Countdown+ Calendar](https://apps.apple.com/us/app/countdown-calendar-lite/id566237798) y [DAY DAY](https://play.google.com/store/apps/details?id=princ.lifestyle.DDay&hl=es&gl=US).
 
 
-+ [Añadir una cita](#añadir-una-cita)
-+ [Clasificarla en un campo concreto](#clasificarla-en-un-campo-concreto)
-+ [Configurar si quieres recordatorio o no](#configurar-si-quieres-recordatorio-o-no)
-+ [Ver el tiempo que queda para que llegue el evento](#ver-el-tiempo-que-queda-para-que-llegue-el-evento)
-+ [Poder editarlo en caso de que sufra algún cambio](#poder-editarlo-en-caso-de-que-sufra-algún-cambio)
-+ [¿Cuándo fue la última vez que sucedió?](#cuándo-fue-la-última-vez-que-sucedió)
+### ¿Qué podremos encontrar en esta página web?
+ ![Formulario](https://i.ibb.co/R2g3K5g/Captura-de-pantalla-2022-03-11-a-las-16-18-34.png)
+
+ ![Tarjetas](https://i.ibb.co/PYP7tJK/Captura-de-pantalla-2022-03-11-a-las-16-22-29.png)
+
+ Estos son dos ejemplos de la interfaz que nos encontraremos tanto para añadir un evento como la tarjeta en la que tendremos todos los datos del mismo.
+
+### Estructura del proyecto ###
+
+
+```
+
+    ├── proyecto
+    │
+    ├── packages
+    │    ├── front
+    │    │    ├── ...
+    │    │    └── package.json
+    │    │
+    │    └── api
+    │         ├── ...
+    │         └── package.json
+    │
+    ├── .gitignore
+    ├── package.json
+    └── README.md
+```
 
 ---
 
-## Añadir una cita ##
+### Tecnologías ###
 
-Tras loguearnos de forma correcta y crear nuestra cuenta, este apartado será el primero que se mostrará si no tienes ningún evento ya registrado. Habrá un calendario básico en el cual buscaremos el día en el que ocurre el evento que queramos guardar.
+El proyecto esta desarrollado principalmente con TypeScript, además de con React y Next.js. Otras tecnologías usadas durante el proceso son las siguientes: 
 
----
+| API      | FRONT        |
+|----------|--------------|
+| Fastify  | Auth0        |
+| Mongoose | Babel        |
+| Dotenv   | Axios        |
+| NodeJS   | Chakra UI    |
+| Auth0    | JSONWebToken |
+|Yarn      | Yarn
+### Ahora es tu turno ###
 
-## Clasificarla en un campo concreto ##
+Estas son las isntrucciones para que tú mism@ puedas obtener el código y trastear con el todo lo que quieras:
 
-Tras clickar en el día que queramos seleccionar, se nos mostrará un formulario para crear la tarjeta del evento. Le podremos poner nombre, hora y clasificarlo en un grupo, para que luego tengamos las citas reunidas por tipo. Los tags podrán ser creados por el usuario, dándole el nombre y color que quieran, aunque también podremos elegir alguna categoría predefinida, como trabajo, médico, social, etc.
+Clona el proyecto
 
----
+````
+ git clone https://github.com/SalvadorSG/YaLoHare.git
+````
 
-## Configurar si quieres recordatorio o no ##
+Accede al repositorio clonado
 
-Si la cita es importante, tendremos la opción de que te llegue un correo electrónico el día de antes del evento para recordártelo.
+````
+cd YaLoHare
+`````
+Instala las dependecias (es necesario hacerlo en las dos partes, tanto en el front como en la api)
 
----
+`````
+yarn install
+`````
+Ejecuta el comando dev en ambos proyectos para arrancarlos y poder ver su funcionamiento
 
-## Ver el tiempo que queda para que llegue el evento ##
-
-Una vez hayamos añadido algún suceso, se nos redirigirá a la pantalla principal, donde estarán las tarjetas con la cuenta atrás hasta el momento del evento. Las tarjetas se mostrarán en orden cronológico, siendo las primeras las que más cerca estén de que ocurran. Nos informarán de los días, horas y minutos que faltan hasta dicha cita. También encontraremos los apartados antes creados por si queremos filtrarlas y mostrar solo las de un campo en concreto, por ejemplo, las médicas. 
-
----
-
-## Poder editarlo en caso de que sufra algún cambio ##
-
-Accediendo a cada cita podremos borrarla o editarla en caso de que sufra algún cambio. Si editamos la fecha, este evento se recolocará en su nuevo sitio teniendo en cuenta cuánto le falta para que ocurra.
-
----
-
-## ¿Cuándo fue la última vez que sucedió? ##
-
-También tendremos la opción de ver cuánto tiempo ha pasado desde que ocurrió el evento en concreto, viendo cuándo fue la última vez que quedamos con X persona o el último informe de contabilidad que hicimos.
+```
+yarn run dev
+`````
 
