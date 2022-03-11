@@ -1,87 +1,93 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { deleteEvento } from '../../../lib/api';
-
-interface TarjetaProps {
-  nombre: String;
-  fecha: Date;
-  recordatorio: Boolean;
-}
-
-const Columnas = styled.div`
-  display: flex;
-  float: left;
-  margin: 30px;
-`;
-const TipoTarjeta = styled.div`
-  border: 1px solid green;
-  padding: 20px;
-  column-count: 1;
-  line-height : 15px;
-  width: 150px;
-  height: 300px;
-  background-color: lightgreen;
-`;
-
-const Elemento = styled.div`
-margin: 15px;
-`
-
-const CustomBtn = styled.button`
-  background-color: white;
-  border: 2px solid #4caf50;
-  color: black;
-  padding: 1px 3px;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 20px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.6s;
-  &:hover {
-    background-color: #4caf50; /* Green */
-    color: white;
+import {
+    Box,
+    Center,
+    Text,
+    Stack,
+    Flex,
+    List,
+    ListItem,
+    ListIcon,
+    Button,
+    useColorModeValue,
+  } from '@chakra-ui/react';
+  import { CheckIcon } from '@chakra-ui/icons';
+  import React, { useEffect, useState } from 'react';
+  import { deleteEvento } from '../../../lib/api';
+  
+  interface TarjetaProps {
+    nombre: String;
+    fecha: Date;
+    recordatorio: Boolean;
   }
-  &::active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+  
+
+  export const Tarjeta = ({ nombre, fecha, _id }) => {
+    const [fechaFormateada, setFechaFormateada] = useState('');
+    const [horaFormateada, setHoraFormateada] = useState('');
+  
+    useEffect(() => {
+      const date = new Date(fecha)
+      setFechaFormateada(date.toLocaleDateString('es-ES'));
+      setHoraFormateada(`${date.getHours()}:${date.getMinutes()}`);
+    });
+  
+  
+  
+    const deleteEvent = (_id) => {
+      console.log('id de tarjeta', _id);
+      deleteEvento(_id);
+    };
+    return (
+      <Flex margin='3' float='left'>
+        <Box
+          maxW={'330px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.800')}
+          boxShadow={'2xl'}
+          rounded={'md'}
+          overflow={'hidden'}>
+          <Stack
+            textAlign={'center'}
+            p={6}
+            color={useColorModeValue('gray.800', 'white')}
+            align={'center'}>
+            <Text>
+                {nombre}
+            </Text>
+            <Text>
+                {fechaFormateada}
+            </Text>
+
+            <Stack direction={'column'} align={'center'} justify={'center'}>
+              <Text fontSize={'5xl'} fontWeight={600}>
+                {fechaFormateada}
+              </Text>
+              <Text fontSize={'3xl'} boxShadow='md'>
+                {horaFormateada}
+            </Text>
+            </Stack>
+          </Stack>
+  
+          <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
+  
+            <Button
+            onClick={() => deleteEvent(_id)}
+              mt={10}
+              w={'half'}
+              bg={'green.400'}
+              color={'white'}
+              rounded={'xl'}
+              boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+              _hover={{
+                bg: 'green.500',
+              }}
+              _focus={{
+                bg: 'green.500',
+              }}>
+            Eliminar
+            </Button>
+          </Box>
+        </Box>
+      </Flex>
+    );
   }
-`;
-
-export const Tarjeta = ({ nombre, fecha, _id }) => {
-  const [fechaFormateada, setFechaFormateada] = useState('');
-  const [horaFormateada, setHoraFormateada] = useState('');
-
-  useEffect(() => {
-    const date = new Date(fecha)
-    setFechaFormateada(date.toLocaleDateString('es-ES'));
-    setHoraFormateada(`${date.getHours()}:${date.getMinutes()}`);
-  });
-
-
-
-  const deleteEvent = (_id) => {
-    console.log('id de tarjeta', _id);
-    deleteEvento(_id);
-  };
-  return (
-    <Columnas>
-      <TipoTarjeta>
-        <div>
-          <Elemento>
-          <div>{nombre}</div>
-          </Elemento>
-          <Elemento>
-          <div>{fechaFormateada}</div>
-          </Elemento>
-          <Elemento>
-          <div>{horaFormateada}</div>
-          </Elemento>
-          <CustomBtn onClick={() => deleteEvent(_id)} >Eliminar </CustomBtn>
-        </div>
-      </TipoTarjeta>
-    </Columnas>
-  );
-};

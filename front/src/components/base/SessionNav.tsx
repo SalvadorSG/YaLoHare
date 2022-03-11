@@ -3,15 +3,6 @@ import { useUser } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const Nav = styled.section`
-  height: 64px;
-  width: 30px;
-  padding: 8px 24px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const BtnLink = styled.button`
   color: green;
   cursor: pointer;
@@ -26,14 +17,6 @@ const BtnLink = styled.button`
   }
 `;
 
-const Name = styled.span`
-  color: black;
-  font-weight: 700;
-  font-size: 16px;
-  margin-right: 50px;
-  align-items: 
-`;
-
 function SessionNav() {
   const { user, error, isLoading } = useUser();
 
@@ -42,14 +25,14 @@ function SessionNav() {
   console.log(isLoading);
 
   return (
-    <Nav>
+    <section>
       <div>
-        <Name>Bienvenid@ {user?.name}</Name>
+        <span> {user?.name}</span>
       </div>
       <div>
         {user ? (
           <Link href="/api/auth/logout">
-            <BtnLink>Cerrar sesión</BtnLink>
+            <button>Cerrar sesión</button>
           </Link>
         ) : (
           <Link href="/api/auth/login">
@@ -57,7 +40,7 @@ function SessionNav() {
           </Link>
         )}
       </div>
-    </Nav>
+    </section>
   );
 }
 

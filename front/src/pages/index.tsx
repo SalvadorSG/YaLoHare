@@ -1,10 +1,11 @@
-import { Navbar } from '../components/base/Navbar';
+
+import { Box, Img, Flex, Text } from '@chakra-ui/react';
+import React from 'react';
+import { PaginaIndex } from '../components/base/vistas_paginas/PaginaIndex';
 
 const IndexPage = () => {
   return (
-    <div>
-      <p>¡Bienvenido a Ya Lo Haré!</p>
-    </div>
+<PaginaIndex />
   );
 };
 

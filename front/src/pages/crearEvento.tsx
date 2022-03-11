@@ -1,11 +1,11 @@
 import React from 'react';
-import NuevoEvento from '../components/form/nuevoEvento';
-import { Navbar } from '../components/base/Navbar';
+import { FormDeEvento } from '../components/form/FormDeEvento';
+
 
 const crearEvento = () => (
   <div>
-    <h1>Añade un nuevo evento</h1>
-    <NuevoEvento />
+    <FormDeEvento />
+    {/* <NuevoEvento /> */}
   </div>
 );
 
