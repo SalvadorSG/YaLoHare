@@ -14,6 +14,7 @@ export const PaginaIndex = () => {
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex
+      fontFamily='initial'
         backgroundColor="#b8c6db"
         backgroundImage="linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"
         p={8}
@@ -24,6 +25,7 @@ export const PaginaIndex = () => {
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text
+            fontFamily='initial'
               as={'span'}
               position={'relative'}
               _after={{
@@ -75,7 +77,7 @@ export const PaginaIndex = () => {
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1}>
+      <Flex flex={1.5}>
         <Image
           alt={'Login Image'}
           objectFit={'cover'}

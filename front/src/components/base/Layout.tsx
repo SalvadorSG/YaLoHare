@@ -1,14 +1,15 @@
-import { Navbar } from './Navbar';
 import { Box, Img, Flex } from '@chakra-ui/react';
-import { PruebaNavbar } from './PruebaNavbar';
+import { Footer } from './Footer';
+import { Navbar } from './Navbar';
 
 
 export const Layout = ({ children }) => {
   return (
     <Box>
-      {/* <Navbar /> */}
-      <PruebaNavbar />
+      <Navbar />
+
       <div>{children}</div>
+      <Footer />
     </Box>
   );
 };

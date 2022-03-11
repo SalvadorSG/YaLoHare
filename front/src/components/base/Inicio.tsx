@@ -12,7 +12,6 @@ export const BackgroundPrincipal = () => {
         opacity="1"
         src="https://live.staticflickr.com/65535/51931007765_8728026dda_b.jpg"
       ></Img>
-      {/* </Box> */}
       <Stack spacing={3}></Stack>
     </Flex>
   );

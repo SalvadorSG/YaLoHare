@@ -1,52 +1,44 @@
-
-   
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
+  Link,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
-import Link from "next/link";
-import SessionNav from "./SessionNav";
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import SessionNav from './SessionNav';
+
 const Links = [
   {
-    name: " Inicio",
-    path: "/",
+    name: ' Inicio',
+    path: '/',
   },
   {
-    name: "Añade un nuevo evento",
-    path: "/crearEvento",
+    name: 'Añade un nuevo evento',
+    path: '/crearEvento',
   },
   {
-    name: "Futuro",
-    path: "/eventoFuturo",
+    name: 'Futuro',
+    path: '/eventoFuturo',
   },
   {
-    name: "Pasado",
-    path: "/eventoPasado",
+    name: 'Pasado',
+    path: '/eventoPasado',
   },
 ];
 
- const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
+const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
   <Box
     px={2}
     py={1}
-    rounded={"md"}
+    rounded={'md'}
     _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("green.200", ".700"),
+      textDecoration: 'none',
+      bg: useColorModeValue('gray.200', 'gray.700'),
     }}
   >
     <Link href={path}>{children}</Link>
@@ -56,22 +48,28 @@ const Links = [
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+/*
+
+background-color: #fde7f9;
+background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
+*/
+
   return (
-    <div>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+    <>
+      <Box fontFamily='body' fontSize='20'  bg='linear-gradient(315deg, #fde7f9 0%, #aacaef 74%)' px={6}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
-            size={"md"}
+            size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
+          <HStack spacing={8} alignItems={'center'}>
             <HStack
-              as={"nav"}
+              as={'nav'}
               spacing={4}
-              display={{ base: "none", md: "flex" }}
+              display={{ base: 'none', md: 'flex' }}
             >
               {Links.map(({ name, path }) => (
                 <NavLink key={path} path={path}>
@@ -80,22 +78,14 @@ export const Navbar = () => {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
-           <SessionNav />
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-              > </MenuButton>
-            </Menu>
+          <Flex alignItems={'center'}>
+            <SessionNav />
           </Flex>
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
               {Links.map(({ name, path }) => (
                 <NavLink key={path} path={path}>
                   {name}
@@ -105,8 +95,6 @@ export const Navbar = () => {
           </Box>
         ) : null}
       </Box>
-
-      {/* <Box p={4}>Main Content Here</Box> */}
-    </div>
+    </>
   );
-}
+};

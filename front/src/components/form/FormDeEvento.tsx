@@ -42,17 +42,24 @@ export const FormDeEvento = () => {
     data.fecha.setMinutes(data.minutos);
     console.log(data);
     const evento = await addEvento(data);
-    reset();
+    reset({
+      nombre: '',
+      categoria: 'Trabajo',
+      fecha: '',
+      hora: '',
+      minutos: '',
+    });
   });
   console.log(errors);
 
   return (
     <Flex
+    fontFamily='initial'
+      backgroundImage="linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"
       onSubmit={handleSubmit(onSubmit)}
       minH={'50vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}
     >
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
@@ -123,8 +130,6 @@ export const FormDeEvento = () => {
             <Stack spacing={10} pt={2}>
               <Button
                 onClick={onSubmit}
-                type="submit"
-                loadingText="Submitting"
                 size="lg"
                 bg={'blue.400'}
                 color={'white'}

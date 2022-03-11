@@ -1,21 +1,8 @@
 import React from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
-import styled from 'styled-components';
-
-const BtnLink = styled.button`
-  color: green;
-  cursor: pointer;
-  background: white;
-  border: 1px solid black;
-  height: 50px;
-  width: 100px;
-  border-radius: 8px;
-  padding: 8px px;
-  &:hover {
-    background-color: lightgreen;
-  }
-`;
+import { MdBuild, MdCall, MdOutlinePermIdentity } from 'react-icons/md';
+import { Avatar, Box, Button, ButtonGroup, Flex, Grid } from '@chakra-ui/react';
 
 function SessionNav() {
   const { user, error, isLoading } = useUser();
@@ -25,22 +12,42 @@ function SessionNav() {
   console.log(isLoading);
 
   return (
-    <section>
-      <div>
+    <Flex align="center" padding="5">
+      <Flex align="center" margin="5">
         <span> {user?.name}</span>
-      </div>
+      </Flex>
       <div>
         {user ? (
           <Link href="/api/auth/logout">
-            <button>Cerrar sesión</button>
+            <Button
+              leftIcon={<MdOutlinePermIdentity />}
+              bg={'blue.400'}
+              variant='outline'
+              textColor='ButtonHighlight'
+              _hover={{
+                bg: 'blue.500',
+              }}
+            >
+              Cerrar sesión
+            </Button>
           </Link>
         ) : (
           <Link href="/api/auth/login">
-            <BtnLink>Iniciar sesión</BtnLink>
+            <Button
+              leftIcon={<MdOutlinePermIdentity />}
+              bg={'blue.400'}
+              variant='outline'
+              textColor='ButtonHighlight'
+              _hover={{
+                bg: 'blue.500',
+              }}
+            >
+              Iniciar sesión
+            </Button>
           </Link>
         )}
       </div>
-    </section>
+    </Flex>
   );
 }
 
