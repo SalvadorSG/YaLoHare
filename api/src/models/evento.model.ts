@@ -19,7 +19,7 @@ const schema = new Schema(
     categoria: { type: String, require: true, ref: 'categoria' },
     recordatorio: { type: Boolean, require: false },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 export const Evento = mongoose.model<iEvento>('Evento', schema);

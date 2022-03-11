@@ -1,25 +1,13 @@
 import {
   Box,
-  Center,
   Text,
   Stack,
   Flex,
-  List,
-  ListItem,
-  ListIcon,
   Button,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
 import React, { useEffect, useState } from 'react';
 import { deleteEvento } from '../../../lib/api';
-import { type } from 'os';
-
-interface TarjetaProps {
-  nombre: String;
-  fecha: Date;
-  recordatorio: Boolean;
-}
 
 export const Tarjeta = ({ nombre, fecha, _id, categoria }) => {
   const [fechaFormateada, setFechaFormateada] = useState('');
@@ -97,12 +85,12 @@ export const Tarjeta = ({ nombre, fecha, _id, categoria }) => {
 
         <Box>
           <Button
-          shadow='sm'
-          border='1px'
+            shadow="sm"
+            border="1px"
             onClick={() => deleteEvent(_id)}
             mt={10}
-            mb='10'
-            ml='10'
+            mb="10"
+            ml="10"
             w={'half'}
             bg={'green.400'}
             color={'white'}

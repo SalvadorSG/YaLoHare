@@ -5,23 +5,17 @@ import {
   FormControl,
   FormLabel,
   Input,
-  InputGroup,
   HStack,
   VStack,
-  InputRightElement,
-  RadioGroup,
   Stack,
   Button,
-  Radio,
   Heading,
   Text,
   useColorModeValue,
-  Link,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { addEvento } from '../../lib/api';
-import { useState } from 'react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+
 
 const hours = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -54,7 +48,7 @@ export const FormDeEvento = () => {
 
   return (
     <Flex
-    fontFamily='initial'
+      fontFamily="initial"
       backgroundImage="linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"
       onSubmit={handleSubmit(onSubmit)}
       minH={'50vh'}

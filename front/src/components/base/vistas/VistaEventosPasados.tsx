@@ -1,14 +1,10 @@
 import {
-  Link,
-  Button,
   Flex,
   Heading,
   Image,
   Stack,
   Text,
-  useBreakpointValue,
 } from '@chakra-ui/react';
-import { MdBuild, MdCode, MdCodeOff } from 'react-icons/md';
 
 export const VistaEventosPasados = () => {
   return (

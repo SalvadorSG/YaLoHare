@@ -1,8 +1,8 @@
 import React from 'react';
 import { useUser } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
-import { MdBuild, MdCall, MdOutlinePermIdentity } from 'react-icons/md';
-import { Avatar, Box, Button, ButtonGroup, Flex, Grid } from '@chakra-ui/react';
+import { MdOutlinePermIdentity } from 'react-icons/md';
+import { Button, Flex } from '@chakra-ui/react';
 
 function SessionNav() {
   const { user, error, isLoading } = useUser();
@@ -22,8 +22,8 @@ function SessionNav() {
             <Button
               leftIcon={<MdOutlinePermIdentity />}
               bg={'blue.400'}
-              variant='outline'
-              textColor='ButtonHighlight'
+              variant="outline"
+              textColor="ButtonHighlight"
               _hover={{
                 bg: 'blue.500',
               }}
@@ -36,8 +36,8 @@ function SessionNav() {
             <Button
               leftIcon={<MdOutlinePermIdentity />}
               bg={'blue.400'}
-              variant='outline'
-              textColor='ButtonHighlight'
+              variant="outline"
+              textColor="ButtonHighlight"
               _hover={{
                 bg: 'blue.500',
               }}

@@ -1,4 +1,4 @@
-import { Box, Flex, Grid } from '@chakra-ui/react';
+import { Flex, Grid } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { Tarjeta } from './Tarjeta';
 
@@ -9,9 +9,9 @@ export const ListaDeEventos = () => {
       <Flex
         marginBottom="540"
         backgroundImage="linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"
-        justifyContent='center'
+        justifyContent="center"
         textAlign={'center'}
-       fontSize={'7xl'}
+        fontSize={'7xl'}
       >
         Para ver tus próximos eventos,
         <br></br> regístrate o inicia sesión

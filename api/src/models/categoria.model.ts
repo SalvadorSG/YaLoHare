@@ -28,7 +28,7 @@ const schema = new Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 export const Categoria = mongoose.model<iCategoria>('Categoria', schema);

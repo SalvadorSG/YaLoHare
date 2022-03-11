@@ -1,5 +1,5 @@
 import React from 'react';
-import {VistaEventosPasados} from '../components/base/vistas_paginas/VistaEventosPasados';
+import { VistaEventosPasados } from '../components/base/vistas/VistaEventosPasados';
 
 const eventoPasado = () => (
   <div>

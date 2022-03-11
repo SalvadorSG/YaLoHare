@@ -1,7 +1,6 @@
-import { Box, Img, Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Footer } from './Footer';
 import { Navbar } from './Navbar';
-
 
 export const Layout = ({ children }) => {
   return (

@@ -1,12 +1,8 @@
-
 import React from 'react';
-import  {PaginaIndex}  from '../components/base/vistas_paginas/PaginaIndex';
+import { VistaIndex } from '../components/base/vistas/VistaIndex';
 
 const IndexPage = () => {
-  return (
-<PaginaIndex />
-  );
+  return <VistaIndex />;
 };
-
 
 export default IndexPage;

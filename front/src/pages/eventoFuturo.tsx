@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListaDeEventos} from '../components/base/tarjetas/ListaDeEventos';
+import { ListaDeEventos } from '../components/base/tarjetas/ListaDeEventos';
 
 const eventoFuturo = () => (
   <div>

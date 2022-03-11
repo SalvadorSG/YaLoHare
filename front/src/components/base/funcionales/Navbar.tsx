@@ -48,15 +48,14 @@ const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-/*
-
-background-color: #fde7f9;
-background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
-*/
-
   return (
     <>
-      <Box fontFamily='body' fontSize='20'  bg='linear-gradient(315deg, #fde7f9 0%, #aacaef 74%)' px={6}>
+      <Box
+        fontFamily="body"
+        fontSize="20"
+        bg="linear-gradient(315deg, #fde7f9 0%, #aacaef 74%)"
+        px={6}
+      >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

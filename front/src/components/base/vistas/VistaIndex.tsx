@@ -10,11 +10,11 @@ import {
 } from '@chakra-ui/react';
 import { MdBuild, MdCode, MdCodeOff } from 'react-icons/md';
 
-export const PaginaIndex = () => {
+export const VistaIndex = () => {
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex
-      fontFamily='initial'
+        fontFamily="initial"
         backgroundColor="#b8c6db"
         backgroundImage="linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"
         p={8}
@@ -25,7 +25,7 @@ export const PaginaIndex = () => {
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
             <Text
-            fontFamily='initial'
+              fontFamily="initial"
               as={'span'}
               position={'relative'}
               _after={{

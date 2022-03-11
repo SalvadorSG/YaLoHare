@@ -1,6 +1,5 @@
 import React from 'react';
-import {FormDeEvento} from '../components/form/FormDeEvento';
-
+import { FormDeEvento } from '../components/form/FormDeEvento';
 
 const crearEvento = () => (
   <div>

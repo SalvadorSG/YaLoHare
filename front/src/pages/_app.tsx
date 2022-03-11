@@ -1,6 +1,6 @@
 import { UserProvider } from '@auth0/nextjs-auth0';
 import { SWRConfig } from 'swr';
-import { Layout } from '../components/base/Layout';
+import { Layout } from '../components/base/funcionales/Layout';
 import { fetcher } from '../lib/fetcher';
 import { ChakraProvider } from '@chakra-ui/react';
 
